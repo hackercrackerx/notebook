@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="signInForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position ="stacked">Email</ion-label>
+        <ion-input formControlName="email" type ="email" placeholder ="user@domain.com" name ="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position ="stacked">Password</ion-label>
+        <ion-input formControlName="password" type ="password" placeholder ="password" name ="password"></ion-input>
+      </ion-item>
+      <ion-button  [disabled]="!signInForm.valid" expand ="block" color="medium" type ="submit" (click)="signIn()"> Sign in</ion-button>
+  
+    <ion-item>
+      <ion-label>Dont haev an account?</ion-label>
+    </ion-item>
+  <ion-button expand ="block" color="tertiary" type ="submit" (click)="signUp()"> Sign up</ion-button>
+  
+  </ion-list>
+  </form>
+</ion-content>
