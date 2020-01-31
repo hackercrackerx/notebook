@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'addnote',
+    loadChildren: () => import('./addnote/addnote.module').then( m => m.AddnotePageModule)
   }
 ];
 
