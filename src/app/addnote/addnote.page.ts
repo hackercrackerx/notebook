@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-add',
+  selector: 'app-addnote',
   templateUrl: './addnote.page.html',
   styleUrls: ['./addnote.page.scss'],
 })

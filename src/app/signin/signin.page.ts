@@ -32,7 +32,7 @@ export class SigninPage implements OnInit {
     this.auth.signIn(email, password)
       .then((response) => {
         this.signInForm.reset();
-        this.router.navigate(['/notes'])
+        this.router.navigate(['/notelist'])
       })
       .catch((error) => {
         console.log(error)
@@ -52,7 +52,7 @@ export class SigninPage implements OnInit {
         this.auth.signUp(email, password)
           .then((userData) => {
             //sign up Successful
-            this.router.navigate(['/notes']);
+            this.router.navigate(['/notelist']);
           })
           .catch((error) => {
             //handle errors
