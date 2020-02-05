@@ -15,6 +15,8 @@ import { AngularFirestoreModule} from '@angular/fire/firestore';
 import { environment} from '../environments/environment';
 import { SignupPageModule } from './signup/signup.module';
 import { AddnotePageModule } from './addnote/addnote.module';
+import { NoteInfoPageModule } from './note-info/note-info.module';
+import { NotelistPageModule } from './notelist/notelist.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +29,9 @@ import { AddnotePageModule } from './addnote/addnote.module';
     AngularFireAuthModule,
     AngularFirestoreModule,
     SignupPageModule,
-    AddnotePageModule
+    AddnotePageModule,
+    NoteInfoPageModule,
+    NotelistPageModule
   ],
   providers: [
     StatusBar,

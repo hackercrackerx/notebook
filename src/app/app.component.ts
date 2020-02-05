@@ -48,8 +48,8 @@ export class AppComponent {
     this.afAuth.authState.subscribe((user)=>{
       if(user){
         this.appPages = [
-          { title: 'Notes' , url:'/notes', icon: 'home'},
-          {title: 'Settings', url:'/settings', icon: 'settings'}
+          { title: 'Notes' , url:'/notelist', icon: 'home'},
+         // {title: 'Settings', url:'/settings', icon: 'settings'}
         ]
         this.user = user;
       }

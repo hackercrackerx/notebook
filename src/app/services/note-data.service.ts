@@ -55,4 +55,12 @@ export class NoteDataService {
       note: note.note
     });
   }
+
+  deleteNote( id ) {
+    this.notesCollection.doc( id ).delete();
+  }
+
+  getUid() {
+    return this.uid;
+  }
 }
