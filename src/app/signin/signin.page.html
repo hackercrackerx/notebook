@@ -16,12 +16,12 @@
         <ion-label position ="stacked">Password</ion-label>
         <ion-input formControlName="password" type ="password" placeholder ="password" name ="password"></ion-input>
       </ion-item>
-      <ion-button  [disabled]="!signInForm.valid" expand ="block" color="medium" type ="submit" (click)="signIn()"> Sign in</ion-button>
+      <ion-button  [disabled]="!signInForm.valid" expand ="block" color="secondary" type ="submit" (click)="signIn()"> Sign in</ion-button>
   
     <ion-item>
-      <ion-label>Dont haev an account?</ion-label>
+      <ion-label>Dont have an account?</ion-label>
     </ion-item>
-  <ion-button expand ="block" color="tertiary" type ="submit" (click)="signUp()"> Sign up</ion-button>
+  <ion-button expand ="block" color="primary" type ="submit" (click)="signUp()"> Sign up</ion-button>
   
   </ion-list>
   </form>

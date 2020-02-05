@@ -14,7 +14,7 @@ import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestoreModule} from '@angular/fire/firestore';
 import { environment} from '../environments/environment';
 import { SignupPageModule } from './signup/signup.module';
-//import { AddPageModule } from './add/add.module';
+import { AddnotePageModule } from './addnote/addnote.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +27,7 @@ import { SignupPageModule } from './signup/signup.module';
     AngularFireAuthModule,
     AngularFirestoreModule,
     SignupPageModule,
-    //AddPageModule
+    AddnotePageModule
   ],
   providers: [
     StatusBar,

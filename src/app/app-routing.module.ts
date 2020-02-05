@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'signin',
     pathMatch: 'full'
   },
   {
@@ -24,9 +24,25 @@ const routes: Routes = [
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
   {
-    path: 'addnote',
-    loadChildren: () => import('./addnote/addnote.module').then( m => m.AddnotePageModule)
-  }
+    path: 'notelist',
+    loadChildren: () => import('./notelist/notelist.module').then( m => m.NotelistPageModule)
+  },
+  {
+    path: 'note-info',
+    loadChildren: () => import('./note-info/note-info.module').then( m => m.NoteInfoPageModule)
+  },
+  // {
+  //   path: 'notes',
+  //   loadChildren: () => import('./notes/notes.module').then( m => m.NotesPageModule)
+  // },
+  // {
+  //   path: 'add',
+  //   loadChildren: () => import('./add/add.module').then( m => m.AddPageModule)
+  // },
+  // {
+  //   path: 'note-detail',
+  //   loadChildren: () => import('./note-detail/note-detail.module').then( m => m.NoteDetailPageModule)
+  // }
 ];
 
 @NgModule({
