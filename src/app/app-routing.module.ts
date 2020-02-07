@@ -31,18 +31,7 @@ const routes: Routes = [
     path: 'note-info',
     loadChildren: () => import('./note-info/note-info.module').then( m => m.NoteInfoPageModule)
   },
-  // {
-  //   path: 'notes',
-  //   loadChildren: () => import('./notes/notes.module').then( m => m.NotesPageModule)
-  // },
-  // {
-  //   path: 'add',
-  //   loadChildren: () => import('./add/add.module').then( m => m.AddPageModule)
-  // },
-  // {
-  //   path: 'note-detail',
-  //   loadChildren: () => import('./note-detail/note-detail.module').then( m => m.NoteDetailPageModule)
-  // }
+
 ];
 
 @NgModule({

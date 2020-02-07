@@ -20,6 +20,10 @@
         <ion-label position="stacked">Note</ion-label>
         <ion-textarea name="note" formControlName="note"></ion-textarea>
       </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Photo</ion-label>
+        <ion-button expand ="block" color="primary" type ="submit" (click)="cameraClick()"> Camera</ion-button>
+      </ion-item>
     </ion-list>
     <ion-button type="submit" expand="block" color="primary" [disabled]="!addnoteForm.valid" (click)="submit()">
       Add

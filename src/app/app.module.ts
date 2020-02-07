@@ -17,6 +17,10 @@ import { SignupPageModule } from './signup/signup.module';
 import { AddnotePageModule } from './addnote/addnote.module';
 import { NoteInfoPageModule } from './note-info/note-info.module';
 import { NotelistPageModule } from './notelist/notelist.module';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+import { Camera } from '@ionic-native/camera/ngx';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,12 +35,15 @@ import { NotelistPageModule } from './notelist/notelist.module';
     SignupPageModule,
     AddnotePageModule,
     NoteInfoPageModule,
-    NotelistPageModule
+    NotelistPageModule,
+  
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    Geolocation,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Camera
   ],
   bootstrap: [AppComponent]
 })

@@ -6,18 +6,22 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.page.html',
   styleUrls: ['./signin.page.scss'],
 })
+
 export class SigninPage implements OnInit {
+ 
   signInForm: FormGroup;
   constructor(
     private modal: ModalController,
     private auth: AuthService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+   
   ) { }
 
   ngOnInit() {
@@ -61,6 +65,8 @@ export class SigninPage implements OnInit {
     })
     await signUpModal.present();
   }
+
+ 
 
 }
 
