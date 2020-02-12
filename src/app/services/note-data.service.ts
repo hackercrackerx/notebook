@@ -53,6 +53,7 @@ export class NoteDataService {
     this.notesCollection.doc( note.id ).update({
       name: note.name,
       note: note.note
+      
     });
   }
 

@@ -3,25 +3,6 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-// import { MiseEnLocationPage } from '../mise-en-location/mise-en-location';
-// import { FilterPage } from '../filter/filter';
-// import { NavController, Platform, Alert } from 'ionic-angular';
-// import { Voiture } from '../../entities/voiture';
-// import { Geolocation } from '@ionic-native/geolocation';
-// import {
-//   GoogleMaps,
-//   GoogleMap,
-//   Environment,
-//   LatLng,
-//   CameraPosition,
-//   ILatLng,
-//   MarkerIcon,
-//   GoogleMapsEvent,
-//   Marker,
-//   BaseArrayClass
-// } from '@ionic-native/google-maps';
-// import { LiteralArray } from '@angular/compiler';
-// import { ListVoitureProvider } from '../../providers/list-voiture/list-voiture';
 
 @Component({
   selector: 'app-addnote',
@@ -36,9 +17,9 @@ export class AddnotePage implements OnInit {
     mediaType: this.camera.MediaType.PICTURE
   }
   private addnoteForm: FormGroup;
+   image:string;
  
 
-  //map: GoogleMap;
   constructor(private formBuilder: FormBuilder, private modal: ModalController, private camera: Camera) {
 
   }
@@ -56,8 +37,9 @@ export class AddnotePage implements OnInit {
     //get data from form
     let name = this.addnoteForm.controls.name.value;
     let note = this.addnoteForm.controls.note.value;
+    //let image= this.image;
     let date = new Date();
-    let noteData = { name: name, date: date, note: note };
+    let noteData = { name: name, date: date, note: note,image:this.image };
     this.modal.dismiss(noteData);
   }
 
@@ -66,47 +48,12 @@ export class AddnotePage implements OnInit {
       // imageData is either a base64 encoded string or a file URI
       // If it's base64 (DATA_URL):
       let base64Image = 'data:image/jpeg;base64,' + imageData;
+      console.log(base64Image);
+      //this.image =base64Image;
      }, (err) => {
       // Handle error
      });
   }
-  // // ionViewDidLoad() {
-  // //   this.loadMap();
-  // // }
-
-  // loadMap() {
-
-  //   // This code is necessary for browser
-  //   Environment.setEnv({
-  //     'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyC6TkVI5vOFOY0-nRXY0m-dobHcmjAGCUA',
-  //     'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyC6TkVI5vOFOY0-nRXY0m-dobHcmjAGCUA'
-  //   });
-
-  //   let mapOptions: GoogleMapOptions = {
-  //     camera: {
-  //        target: {
-  //          lat: 43.0741904,
-  //          lng: -89.3809802
-  //        },
-  //        zoom: 18,
-  //        tilt: 30
-  //      }
-  //   };
-
-  //   this.map = GoogleMaps.create('map_canvas', mapOptions);
-
-  //   let marker: Marker = this.map.addMarkerSync({
-  //     title: 'Ionic',
-  //     icon: 'blue',
-  //     animation: 'DROP',
-  //     position: {
-  //       lat: 43.0741904,
-  //       lng: -89.3809802
-  //     }
-  //   });
-  //   marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-  //     alert('clicked');
-  //   });
-  // }
+ 
 }
 
