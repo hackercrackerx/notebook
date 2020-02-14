@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
+import { CameraService } from '../services/camera.service';
 
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Note } from '../model/note.interface';
 
 @Component({
   selector: 'app-addnote',
@@ -10,17 +11,15 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   styleUrls: ['./addnote.page.scss'],
 })
 export class AddnotePage implements OnInit {
-  options: CameraOptions = {
-    quality: 100,
-    destinationType: this.camera.DestinationType.FILE_URI,
-    encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE
-  }
   private addnoteForm: FormGroup;
-   image:string;
+  private photoTaken: boolean = false;
+  private uploading: boolean = false;
+  private photo: string;
+
  
 
-  constructor(private formBuilder: FormBuilder, private modal: ModalController, private camera: Camera) {
+  constructor(private formBuilder: FormBuilder, private modal: ModalController, 
+    private picture: CameraService ) {
 
   }
 
@@ -37,21 +36,24 @@ export class AddnotePage implements OnInit {
     //get data from form
     let name = this.addnoteForm.controls.name.value;
     let note = this.addnoteForm.controls.note.value;
-    //let image= this.image;
+    let image = (this.photo) ? this.photo : null;
     let date = new Date();
-    let noteData = { name: name, date: date, note: note,image:this.image };
+    let noteData = { name: name, date: date, note: note,image: image };
     this.modal.dismiss(noteData);
   }
 
-  cameraClick(){
-    this.camera.getPicture(this.options).then((imageData) => {
-      // imageData is either a base64 encoded string or a file URI
-      // If it's base64 (DATA_URL):
-      let base64Image = 'data:image/jpeg;base64,' + imageData;
-     }, (err) => {
-      // Handle error
-     });
+  takePhoto() {
+    this.photoTaken = true;
+    this.uploading = true;
+    this.picture.takePicture().then( (result:string) => {
+      this.photo = result;
+      this.uploading = false;
+    })
+    .catch( (error) => {
+      console.log(error);
+    });
   }
+
  
 }
 

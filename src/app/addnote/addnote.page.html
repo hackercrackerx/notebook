@@ -22,7 +22,7 @@
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Photo</ion-label>
-        <ion-button expand ="block" color="primary" type ="submit" (click)="cameraClick()" > <ion-icon name="Camera"></ion-icon></ion-button>
+        <ion-button expand ="block" color="primary" type ="submit" (click)="takePhoto()" > <ion-icon name="Camera"></ion-icon></ion-button>
       </ion-item>
     </ion-list>
     <ion-button type="submit" expand="block" color="primary" [disabled]="!addnoteForm.valid" (click)="submit()">
